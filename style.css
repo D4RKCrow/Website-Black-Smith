@@ -1,0 +1,117 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Background Image ===== */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("Wooden.jpg") no-repeat center center/cover;
+    background-position: center top;
+}
+
+/* ===== Login Container (Glass Effect) ===== */
+.login-container {
+    width: 380px;
+    padding: 30px 30px 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* ===== Logo Styling ===== */
+.logo img {
+    width: 85%;
+    margin-bottom: 25px;
+}
+
+/* ===== Input Fields ===== */
+.input-box {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    background: #1c1c1c;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box:focus {
+    background: #222;
+    border: 1px solid #4da3ff;
+}
+
+/* ===== Login Button ===== */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #48aaff;
+    border: none;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #1b8cfb;
+}
+
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffffffcc;
+}
+
+.signup-link a {
+    color: #48aaff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Signup Container (same style as login) ===== */
+.signup-container {
+    width: 380px;
+    padding: 30px 30px 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Signup Button */
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background: #48ff8a;
+    border: none;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+}
+
+.signup-btn:hover {
+    background: #00d75f;
+}
