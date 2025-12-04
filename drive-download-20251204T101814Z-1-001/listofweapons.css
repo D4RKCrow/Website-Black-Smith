@@ -1,0 +1,120 @@
+body {
+    background-image: url('Forging.jpg'); /* your image file */
+    background-size: cover;             /* make it cover the entire page */
+    background-position: center;        /* center the image */
+    background-repeat: no-repeat;       /* prevent tiling */
+    background-attachment: fixed;       /* image stays fixed when scrolling */
+    font-family: Arial, sans-serif;
+    color: white;                       /* text color */
+    margin: 0;
+    padding: 0;
+}
+
+.shop-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto; /* Center container with some top/bottom spacing */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sidebar on left */
+.sidebar {
+    flex: 1 1 250px;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Main products area */
+.main-content {
+    flex: 3 1 0;
+}
+
+/* Product grid inside main content */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+
+.card {
+    background: rgba(61, 60, 60, 0.45);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(1px);
+    width: 100%;              /* important: grid controls width */
+    max-width: 280px;         /* keeps cards nicely sized */
+    margin: 0 auto;           /* centers card if column is wider */
+}
+
+
+
+.label {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.red {
+    background-color: #A60000;
+}
+
+.blue {
+    background-color: #0077C9;
+}
+
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.title {
+    color: #FFD700;
+    margin: 12px 0 6px 0;
+}
+
+.desc {
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 12px;
+    min-height: 40px;
+}
+
+.stars {
+    color: gold;
+    margin: 8px 0;
+}
+
+.price {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.stock {
+    color: #5aff5a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #D4AE64;
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 85%;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c49a55;
+}

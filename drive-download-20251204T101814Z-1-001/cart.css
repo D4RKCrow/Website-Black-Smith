@@ -1,0 +1,97 @@
+.cart-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-image:url('Anvil.jpg');
+    background-size: cover;          /* Make it cover the whole item */
+    background-position: center; /* Move image to the bottom */
+    background-repeat: no-repeat;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.cart-img {
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.cart-info {
+    flex-grow: 1;
+    color: white;
+    position: relative;
+}
+
+.remove-btn {
+    background: red;
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.total-section {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+body {
+    background-image: url('Hammer\ and\ Anvil.jpg');
+    background-size: cover;        /* Make it cover the whole screen */
+    background-position: center top;   /* Center the image */
+    background-repeat: no-repeat;  /* Avoid repeating */
+    background-attachment: fixed;  /* Keep it fixed when scrolling */
+    margin: 0;                     /* Remove default margin */
+    font-family: Arial, sans-serif;
+}
+
+
+.total-section {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;   /* <-- Add this */
+}
+
+.cart-container h1 {
+    color: white;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.750) !important; /* 50% transparent black */
+    color: white;
+    padding: 50px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.close-btn {
+    margin-top: 20px;            /* Push button downward */
+}

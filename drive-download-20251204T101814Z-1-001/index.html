@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blacksmith Body Jewelry</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple toggle buttons */
+        .form-toggle { text-align: center; margin-bottom: 20px; }
+        .form-toggle button { margin: 0 10px; padding: 8px 16px; cursor: pointer; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">
+        <img src="Black Smith Logo.png" alt="Blacksmith Body Jewelry Logo">
+    </div>
+
+    <div class="form-toggle">
+        <button id="showLogin">Login</button>
+        <button id="showSignup">Sign Up</button>
+    </div>
+    
+    <form id="loginForm">
+        <input class="input-box" type="text" id="loginUser" placeholder="User Name" required>
+        <input class="input-box" type="password" id="loginPass" placeholder="Password" required>
+        <button class="login-btn" type="submit">LOGIN</button>
+    </form>
+    
+    <form id="signupForm" class="hidden">
+        <input class="input-box" type="text" id="newUser" placeholder="Enter Username" required>
+        <input class="input-box" type="password" id="newPass" placeholder="Enter Password" required>
+        <input class="input-box" type="password" id="confirmPass" placeholder="Confirm Password" required>
+        <button class="login-btn" type="submit">Sign Up</button>
+    </form>
+    
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const showLoginBtn = document.getElementById('showLogin');
+    const showSignupBtn = document.getElementById('showSignup');
+
+    // Toggle forms
+    showLoginBtn.addEventListener('click', () => {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+    });
+    showSignupBtn.addEventListener('click', () => {
+        signupForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+    });
+
+    // LOGIN
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('loginUser').value.trim();
+        const password = document.getElementById('loginPass').value;
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(u => u.username === username && u.password === password);
+
+        if (user) {
+            sessionStorage.setItem('loggedInUser', username);
+            window.location.href = "listofweapons.html"; // redirect after login
+        } else {
+            alert("Invalid username or password.");
+        }
+    });
+
+    // SIGN UP
+    signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('newUser').value.trim();
+        const password = document.getElementById('newPass').value;
+        const confirmPassword = document.getElementById('confirmPass').value;
+
+        if (!username || !password) {
+            alert("Please enter username and password.");
+            return;
+        }
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        if (users.some(u => u.username === username)) {
+            alert("Username already taken.");
+            return;
+        }
+
+        users.push({ username: username, password: password });
+        localStorage.setItem('users', JSON.stringify(users));
+        sessionStorage.setItem('loggedInUser', username);
+
+        window.location.href = "listofweapons.html"; // redirect after signup
+    });
+});
+</script>
+
+</body>
+</html>
